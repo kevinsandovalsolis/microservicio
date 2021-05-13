@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'cl'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile group: 'org.jxls', name: 'jxls-poi', version: '1.0.8'
+	compile group: 'net.sf.jxls', name: 'jxls-core', version: '1.0.3'
+	compile group: 'stax', name: 'stax-api', version: '1.0.1'
+	compile group: 'org.jxls', name: 'jxls', version: '2.5.1'
+
+	testCompile 'org.codehaus.groovy:groovy'
+	testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+	testCompile 'cglib:cglib-nodep:2.2'
+
+	testCompile (group: 'info.cukes', name: 'cucumber-java', version: '1.2.5')
+	testCompile (group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5')
+
+	compileOnly('org.projectlombok:lombok:1.16.18')
+}
+
+test {
+	useJUnitPlatform()
+}
