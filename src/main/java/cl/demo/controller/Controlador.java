@@ -1,5 +1,6 @@
 package cl.demo.controller;
 
+import cl.demo.dto.RequestDto;
 import cl.demo.dto.ResponseDto;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,12 @@ public class Controlador {
     public String getMultivalue(@RequestParam List<String> names) {
         return "Nombres son " + names;
     }
+
+    @PostMapping(value = "/demopost", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseDto metodo(@RequestBody RequestDto request) {
+        return ResponseDto.builder().nombre(request.getNombre()).build();
+    }
+
 
 }
 
