@@ -1,7 +1,10 @@
 package cl.demo.controller;
 
+import cl.demo.constantes.Constantes;
 import cl.demo.dto.RequestDto;
 import cl.demo.dto.ResponseDto;
+import cl.demo.service.Servicio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +16,12 @@ import java.util.Optional;
 public class Controlador {
 
 
+    @Autowired
+    private Servicio  servicio;
+
     @GetMapping(value = "/demoget", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDto getClienteFactoring() {
-        return new ResponseDto("Adin","Lopez");
+        return ResponseDto.builder().build();
     }
 
     @GetMapping("/ejemplo")
@@ -50,7 +56,7 @@ public class Controlador {
 
     @PostMapping(value = "/demopost", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDto metodo(@RequestBody RequestDto request) {
-        return ResponseDto.builder().nombre(request.getNombre()).build();
+        return servicio.metodo1(request);
     }
 
 
