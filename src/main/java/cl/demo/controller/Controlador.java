@@ -14,7 +14,7 @@ public class Controlador {
 
     @GetMapping(value = "/demoget", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDto getClienteFactoring() {
-        return new ResponseDto("prueba");
+        return new ResponseDto("Adin","Lopez");
     }
 
     @GetMapping("/ejemplo")
@@ -39,7 +39,7 @@ public class Controlador {
 
     @PostMapping("/mapparam")
     public String updateMapparam(@RequestParam Map<String,String> allParams) {
-        return "Parameters are " + allParams.entrySet();
+        return "os parametros son: " + allParams.entrySet();
     }
 
     @GetMapping("/multivalue")

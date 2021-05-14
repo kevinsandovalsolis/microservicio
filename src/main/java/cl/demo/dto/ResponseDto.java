@@ -1,18 +1,22 @@
 package cl.demo.dto;
 
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class ResponseDto {
 
-    private String texto;
+    private String nombre;
+    private String apellido;
 
-    public ResponseDto(String c){
-        texto=c;
+    public ResponseDto(String x,String z){
+        nombre=x;
+        apellido=z;
     }
 
-    public String getTexto(){
-        return texto;
-    }
-
-    public void setTexto(String texto){
-        this.texto=texto;
-    }
 }
