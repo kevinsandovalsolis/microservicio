@@ -16,6 +16,7 @@ import java.util.List;
 public class ResponseDto {
 
     private List<Cliente> clientes;
+    private List<Producto> productos;
 
 
 

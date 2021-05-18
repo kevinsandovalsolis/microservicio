@@ -15,6 +15,7 @@ import java.util.List;
 public class RequestDto {
 
     private List<Cliente> clientes;
+    private List<Producto> productos;
 }
 
 
