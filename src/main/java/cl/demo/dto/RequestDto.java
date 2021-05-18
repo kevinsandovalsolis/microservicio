@@ -12,12 +12,9 @@ import java.util.List;
 @Builder
 @Setter
 @Getter
-
 public class RequestDto {
 
-    private String nombre;
-    private String apellido;
-    private LocalDate fecha;
-
-    private List<Auto> autos;
+    private List<Cliente> clientes;
 }
+
+

@@ -15,10 +15,9 @@ import java.util.List;
 @Setter
 public class ResponseDto {
 
-    private String nombre;
-    private String apellido;
-    private LocalDate fecha;
+    private List<Cliente> clientes;
 
 
-    private List<Auto> autos;
+
+
 }

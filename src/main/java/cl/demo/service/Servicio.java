@@ -8,13 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class Servicio {
 
-
-    public ResponseDto metodo1(RequestDto request){
-
+    public ResponseDto ingresaCliente(RequestDto request){
         return ResponseDto.builder()
-                .nombre(request.getNombre())
-                .fecha(request.getFecha())
-                .autos(request.getAutos())
-                .build();
+            .clientes(request.getClientes())
+            .build();
     }
 }
