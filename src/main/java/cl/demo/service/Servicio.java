@@ -11,7 +11,7 @@ public class Servicio {
     public ResponseDto ingresaCliente(RequestDto request){
         return ResponseDto.builder()
             .clientes(request.getClientes())
-            .productos(request.getProductos())
+            //.productos(request.getProductos())
             .build();
     }
 }

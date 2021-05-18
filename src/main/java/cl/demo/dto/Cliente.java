@@ -4,6 +4,7 @@ import lombok.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Cliente {
     private String nombre;
     private String apellido;
