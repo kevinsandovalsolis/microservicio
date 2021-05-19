@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jxls:jxls-poi:1.0.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jxls/jxls-poi/1.0.8/5a146ddf6e4d1275fd9b15ebfdb76d4948111743/jxls-poi-1.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jxls/jxls-poi/1.0.8/cc9adecee0eafdc3479619ffb3e7dec370d983d8/jxls-poi-1.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
