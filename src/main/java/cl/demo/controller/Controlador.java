@@ -20,6 +20,12 @@ public class Controlador {
         return servicio.ingresaCliente(request);
     }
 
+    @GetMapping(value = "/obtenerCliente", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseDtoclientes obtenerCliente(@RequestParam String nombre) {
+
+        return servicio.obtenerCliente(nombre);
+    }
+
 
 }
 
