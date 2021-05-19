@@ -1,18 +1,26 @@
-cl/demo/constantes/Constantes.java
- cl.demo.constantes.Constantes
+cl/demo/dto/ResponseDtoclientes.java
+ cl.demo.dto.ResponseDtoclientes
+ cl.demo.dto.ResponseDtoclientes$ResponseDtoclientesBuilder
+cl/demo/service/Servicio.java
+ cl.demo.service.Servicio
+cl/demo/cliente/bdCliente.java
+ cl.demo.cliente.bdCliente
+ cl.demo.cliente.bdCliente$bdClienteBuilder
 cl/demo/dto/Auto.java
  cl.demo.dto.Auto
+cl/demo/dto/ResponseDtoproductos.java
+ cl.demo.dto.ResponseDtoproductos
 cl/demo/dto/Cliente.java
  cl.demo.dto.Cliente
 cl/demo/DemoApplication.java
  cl.demo.DemoApplication
-cl/demo/service/Servicio.java
- cl.demo.service.Servicio
+cl/demo/dto/Producto.java
+ cl.demo.dto.Producto
+cl/demo/constantes/Constantes.java
+ cl.demo.constantes.Constantes
 cl/demo/controller/Controlador.java
  cl.demo.controller.Controlador
-cl/demo/dto/ResponseDto.java
- cl.demo.dto.ResponseDto
- cl.demo.dto.ResponseDto$ResponseDtoBuilder
-cl/demo/dto/RequestDto.java
- cl.demo.dto.RequestDto
- cl.demo.dto.RequestDto$RequestDtoBuilder
+cl/demo/dto/RequestDtoproductos.java
+ cl.demo.dto.RequestDtoproductos
+cl/demo/dto/RequestDtoclientes.java
+ cl.demo.dto.RequestDtoclientes

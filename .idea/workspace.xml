@@ -5,9 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc17a7b8-f81f-4d32-8b0f-d89a16027166" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cl/demo/cliente/bdCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/RequestDtoproductos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/ResponseDtoproductos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/RequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/RequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/ResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/ResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/cl/demo/controller/Controlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/dto/Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/dto/RequestDto$RequestDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/dto/RequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/dto/ResponseDto$ResponseDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/cl/demo/dto/ResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/controller/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/controller/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/RequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/RequestDtoclientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/dto/ResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/dto/ResponseDtoclientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cl/demo/service/Servicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/demo/service/Servicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +96,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/Everis/clases/Training on the job/microservicio-master" />
+    <property name="last_opened_file_path" value="D:/Cursos/Spring angular(udemy)/webinar-microservices-with-spring-boot-master/webinar-microservices-with-spring-boot-master" />
   </component>
   <component name="RunManager">
     <configuration name="microservicio [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
