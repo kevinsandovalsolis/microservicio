@@ -1,10 +1,12 @@
 package cl.demo.producto;
 
 import cl.demo.dto.Producto;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class bdProducto {
 
     public List<Producto> getProductos(){
