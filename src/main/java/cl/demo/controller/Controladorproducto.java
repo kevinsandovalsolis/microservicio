@@ -16,9 +16,9 @@ public class Controladorproducto {
 
 
     @GetMapping(value = "/obtenerProducto", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseDtoproductos obtenerProducto(@RequestParam String tipo_producto,Integer precio) {
+    public ResponseDtoproductos obtenerProducto(@RequestParam String tipo_producto,Integer preciomin, Integer preciomax) {
 
-        return servicioproducto.obtenerProducto(tipo_producto,precio);
+        return servicioproducto.obtenerProducto(tipo_producto,preciomin,preciomax);
     }
 
 

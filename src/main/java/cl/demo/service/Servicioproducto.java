@@ -23,19 +23,17 @@ public class Servicioproducto {
     }
 
 
-    public ResponseDtoproductos obtenerProducto(String tipo_producto,Integer precio){
+    public ResponseDtoproductos obtenerProducto(String tipo_producto,Integer preciomin,Integer preciomax){
         List<Producto> productos=productoBD.getProductos();
 
-
-
-        return ResponseDtoproductos.builder().productos(filtrar(productos,tipo_producto,precio)).build();
+        return ResponseDtoproductos.builder().productos(filtrar(productos,tipo_producto,preciomin,preciomax)).build();
     }
 
-    private List<Producto> filtrar(List<Producto> productos,String tipo_producto,Integer precio){
+    private List<Producto> filtrar(List<Producto> productos,String tipo_producto,Integer preciomin,Integer preciomax){
         List<Producto> productosRespuesta=new ArrayList<>();
         for(Producto tpp: productos) {//for normal
             if (tpp.getTipo_producto().equalsIgnoreCase(tipo_producto)) {
-                    if( (tpp.getPrecio()) < precio ){
+                    if( ((tpp.getPrecio()) >= preciomin) & ((tpp.getPrecio()) <= preciomax) ){
                         productosRespuesta.add(tpp);
                     }
 
