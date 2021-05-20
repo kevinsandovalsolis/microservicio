@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class Servicio {
+public class Serviciocliente {
 
     @Autowired
     private bdCliente clienteBD;
@@ -64,4 +64,8 @@ public class Servicio {
 
     }
 
+
+
 }
+
+
