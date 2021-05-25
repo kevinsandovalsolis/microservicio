@@ -41,9 +41,11 @@ public class Controladorpedido {
      */
 
     @PostMapping(value = "/agregarPedido", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseDtopedidos metodo(@RequestBody RequestDtopedidos request) {
+    public ResponseDtopedidos agregarPedido(@RequestBody RequestDtopedidos request) {
 
         return serviciopedido.ingresaPedido(request);
+
+
     }
 
 }
