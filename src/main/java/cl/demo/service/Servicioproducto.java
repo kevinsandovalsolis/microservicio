@@ -30,14 +30,12 @@ public class Servicioproducto {
     }
 
     private List<Producto> filtrar(List<Producto> productos,String tipo_producto,Integer preciomin,Integer preciomax){
-        List<Producto> productosRespuesta=new ArrayList<>();
+        List<Producto> productosRespuesta=new ArrayList<>();//lista productos filtrados
         for(Producto tpp: productos) {//for normal
             if (tpp.getTipo_producto().equalsIgnoreCase(tipo_producto)) {
-                    if( ((tpp.getPrecio()) >= preciomin) & ((tpp.getPrecio()) <= preciomax) ){
+                    if( ((tpp.getPrecio()) >= preciomin) && ((tpp.getPrecio()) <= preciomax) ){
                         productosRespuesta.add(tpp);
                     }
-
-            }else{
 
             }
         }
