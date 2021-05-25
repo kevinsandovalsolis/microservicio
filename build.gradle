@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.4.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'jacoco'
+	id 'groovy'
 }
 
 group = 'cl'
@@ -10,6 +12,33 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+}
+
+jacoco {
+	toolVersion = "0.8.5"
+	reportsDir = file("$buildDir/jacoco")
+}
+test {
+	finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+	dependsOn test
+}
+
+class AvoidPackaging {
+	static String[] excludeClassesDot = [
+			'**/cl/demo/**Application*',
+			'**/cl/demo/dto',
+			'**/cl/demo/constantes'
+	]
+}
+
+jacocoTestReport {
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: AvoidPackaging.excludeClassesDot)
+		}))
+	}
 }
 
 dependencies {
@@ -32,6 +61,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 }
 
-test {
-	useJUnitPlatform()
-}
+
+
+
