@@ -43,18 +43,5 @@ public class Servicioproducto {
     }
 
 
-    /*private List<Producto> filtrar(List<Producto> productos,String tipo_producto){
-        List<Producto> productosRespuesta=new ArrayList<>();
-        for(Producto tpp: productos) {//for normal
-            if (tpp.getTipo_producto().equalsIgnoreCase(tipo_producto)) {
-                productosRespuesta.add(tpp);
-            }else{
-
-            }
-        }
-        return  productosRespuesta;
-    }*/
-
-
 
 }

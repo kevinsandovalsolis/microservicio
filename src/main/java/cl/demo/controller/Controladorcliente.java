@@ -15,7 +15,7 @@ public class Controladorcliente {
     private Serviciocliente serviciocliente;
 
     @PostMapping(value = "/registroCliente", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseDtoclientes metodo(@RequestBody RequestDtoclientes request) {
+    public ResponseDtoclientes registroCliente(@RequestBody RequestDtoclientes request) {
 
         return serviciocliente.ingresaCliente(request);
     }

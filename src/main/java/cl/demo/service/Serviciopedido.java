@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -20,11 +19,9 @@ public class Serviciopedido {
         int pedidoeliminar=-1;
         for(int i=0; i<pedidos.size(); i++) {//for normal
             if (pedidos.get(i).getNumero_pedido().equals(numero_pedido)) {
-
                     pedidoeliminar=i;
             break;
             }
-
         }
         pedidosRespuesta.remove(pedidoeliminar);
         return pedidosRespuesta;
