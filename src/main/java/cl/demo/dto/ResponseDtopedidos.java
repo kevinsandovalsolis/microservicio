@@ -13,6 +13,7 @@ import java.util.List;
 public class ResponseDtopedidos {
 
     private String numero_pedidos;
+    private String estado;
 
 
 }

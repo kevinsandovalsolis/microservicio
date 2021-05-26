@@ -27,8 +27,6 @@ public class Serviciocliente {
     public ResponseDtoclientes obtenerCliente(String nombre){
         List<Cliente> clientes=clienteBD.getClientes();
 
-
-
         return ResponseDtoclientes.builder().clientes(filtrar(clientes,nombre)).build();
     }
 
@@ -37,8 +35,6 @@ public class Serviciocliente {
         for(Cliente clt: clientes) {//for normal
             if (clt.getNombre().equalsIgnoreCase(nombre)) {
                 clientesRespuesta.add(clt);
-            }else{
-
             }
         }
         return  clientesRespuesta;

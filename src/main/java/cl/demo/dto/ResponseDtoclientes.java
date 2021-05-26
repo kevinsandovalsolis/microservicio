@@ -1,13 +1,11 @@
 package cl.demo.dto;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 @Builder
@@ -16,6 +14,7 @@ import java.util.List;
 public class ResponseDtoclientes {
 
     private List<Cliente> clientes;
+    private String rut;
 
 
 

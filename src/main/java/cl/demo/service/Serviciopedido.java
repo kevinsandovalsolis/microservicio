@@ -15,12 +15,6 @@ public class Serviciopedido {
     @Autowired
     private bdPedido pedidoBD;
 
-    /*public ResponseDtopedidos eliminarPedido(Integer numero_pedido){
-        List<Pedido> pedidos=pedidoBD.getPedidos();
-
-        return ResponseDtopedidos.builder().pedidos(eliminar(pedidos,numero_pedido)).build();
-    }*/
-
     private List<Pedido> eliminar(List<Pedido> pedidos, Integer numero_pedido) {
         List<Pedido> pedidosRespuesta= new ArrayList<>(pedidos);//se crea una nueva lista con los datos de la anterior
         int pedidoeliminar=-1;
@@ -54,29 +48,5 @@ public class Serviciopedido {
                 .build();
     }
 
-
-    /*
-    public ResponseDtopedidos ingresaPedido(RequestDtopedidos request){
-        return ResponseDtopedidos.builder()
-                .pedidos(request.getPedidos())
-                .build();
-    }
-
-    public ResponseDtopedidos añadirPedido(Integer numero_pedido, Integer cliente_id, String nombre_cliente,String calle,String ciudad,String fecha_envio, Integer producto_id,String hora_de_empaquetado,Integer cantidad_comprada,String estado){
-        List<Pedido> pedidos=pedidoBD.getPedidos();
-
-        return ResponseDtopedidos.builder().pedidos(añadir(pedidos,numero_pedido,cliente_id,nombre_cliente,calle,ciudad,fecha_envio,producto_id,hora_de_empaquetado,cantidad_comprada,estado)).build();
-    }
-
-    private List<Pedido> añadir(List<Pedido> pedidos,Integer numero_pedido, Integer cliente_id, String nombre_cliente,String calle,String ciudad,String fecha_envio, Integer producto_id,String hora_de_empaquetado,Integer cantidad_comprada,String estado){
-        List<Pedido> pedidosRespuesta=new ArrayList<>();//lista pedios filtrados
-        for(Pedido pd: pedidos){
-            pedidosRespuesta.add(0,pd);
-
-        }
-        return  pedidosRespuesta;
-    }
-
-     */
 
 }
