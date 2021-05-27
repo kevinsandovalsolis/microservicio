@@ -12,6 +12,7 @@ import cl.demo.dto.RequestDtoproductos
 import cl.demo.dto.ResponseDtoclientes
 import cl.demo.dto.ResponseDtopedidos
 import cl.demo.dto.ResponseDtoproductos
+import cl.demo.dto.Responseeliminarpedido
 import cl.demo.service.Serviciocliente
 import cl.demo.service.Serviciopedido
 import cl.demo.service.Servicioproducto
@@ -116,6 +117,22 @@ class ControladorSpect extends Specification {
 
         then: "respuesta"
         respuesta.getProductos().get(0).getTipo_producto()=="prueba"
+
+    }
+
+    def "eliminar pedido"(){
+        given:"un numero de pedido"
+        serviciopd.eliminarPedido(_) >> Responseeliminarpedido.builder()
+                .pedidos(Arrays.asList(Pedido.builder()
+                        .numero_pedido(654)
+                        .build()))
+                .build()
+
+        when: "se procesa solicitud"
+        def respuesta=controladorpd.eliminarPedido(654)
+
+        then: "respuesta true si el pedio fue eliminado"
+        respuesta.isEliminado()==true
 
     }
 
