@@ -122,17 +122,13 @@ class ControladorSpect extends Specification {
 
     def "eliminar pedido"(){
         given:"un numero de pedido"
-        serviciopd.eliminarPedido(_) >> Responseeliminarpedido.builder()
-                .pedidos(Arrays.asList(Pedido.builder()
-                        .numero_pedido(654)
-                        .build()))
-                .build()
+        serviciopd.eliminar(_) >> Responseeliminarpedido.builder().build()
 
         when: "se procesa solicitud"
         def respuesta=controladorpd.eliminarPedido(654)
 
         then: "respuesta true si el pedio fue eliminado"
-        respuesta.isEliminado()==true
+        respuesta.setEliminado(true)
 
     }
 
