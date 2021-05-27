@@ -14,17 +14,7 @@ public class Controladorpedido {
     @Autowired
     private Serviciopedido serviciopedido;
 
-
-
-
-    /*
-    @PostMapping(value = "/registroPedido", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseDtopedidos metodo(@RequestBody RequestDtopedidos request) {
-
-        return serviciopedido.ingresaPedido(request);
-    }
-*/
-    @GetMapping(value = "/eliminarPedido", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping (value = "/eliminarPedido", produces = MediaType.APPLICATION_JSON_VALUE)
     public Responseeliminarpedido eliminarPedido(@RequestParam Integer numero_pedido) {
 
         return serviciopedido.eliminar(numero_pedido);

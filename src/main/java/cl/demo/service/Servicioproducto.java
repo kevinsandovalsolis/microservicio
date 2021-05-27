@@ -16,11 +16,16 @@ public class Servicioproducto {
     @Autowired
     private bdProducto productoBD;
 
+
+
+    /*
     public ResponseDtoproductos ingresaProducto(RequestDtoproductos request){
         return ResponseDtoproductos.builder()
                 .productos(request.getProductos())
                 .build();
     }
+    */
+
 
 
     public ResponseDtoproductos obtenerProducto(String tipo_producto,Integer preciomin,Integer preciomax){

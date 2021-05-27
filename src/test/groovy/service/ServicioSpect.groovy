@@ -1,3 +1,4 @@
+import cl.demo.cliente.bdCliente
 import cl.demo.dto.Cliente
 import cl.demo.dto.Pedido
 import cl.demo.dto.Producto
@@ -26,6 +27,7 @@ class ServicioSpect extends Specification{
         serviciopr=new Servicioproducto()
         serviciopd.pedidoBD= new bdPedido()
         serviciopr.productoBD= new bdProducto()
+        serviciocl.clienteBD= new bdCliente()
 
     }
 
@@ -39,6 +41,7 @@ class ServicioSpect extends Specification{
         then: "se ingresa el cliente"
         respuesta
     }
+
    @Unroll
     def "ingresa pedido"(){
         given:"Lista de productos para un pedido"
@@ -61,35 +64,52 @@ class ServicioSpect extends Specification{
     }
 
     def "filtrar productos"(){
-    given:"Lista de prodcutos"
+        given:"Lista de prodcutos"
 
 
-    when:"quiero buscar un prodcuto"
-    def respuesta=serviciopr.obtenerProducto(tipojuego,minimo,maximo)
+        when:"quiero buscar un prodcuto"
+        def respuesta=serviciopr.obtenerProducto(tipojuego,minimo,maximo)
 
-    then:"se retorna el producto filtrado"
-    respuesta.getProductos().size()==registros
+        then:"se retorna el producto filtrado"
+        respuesta.getProductos().size()==registros
 
-    where:
-    tipojuego|minimo|maximo|registros
-    "juego"|11111|22222|2
-    "juego"|16000|22222|1
+        where:
+        tipojuego|minimo|maximo|registros
+        "juego"|11111|22222|2
+        "juego"|16000|22222|1
 
     }
 
-    /*
+    def "filtrar clientes"(){
+        given:"Lista de clientes"
 
-    def "obtener cliente"(){
-        given:"un nombre de cliente"
-        def nombre="Juan"
-        serviciocl.obtenerCliente(_) >> ResponseDtoclientes.builder()
-                .clientes(Arrays.asList(Cliente.builder().nombre("juan").build()))
-                .build()
-        when: "se procesa solicitud"
-        def respuesta=serviciocl.obtenerCliente("Juan")
 
-        then: "respuesta"
-        respuesta.getClientes().size()==1 && respuesta.getClientes().get(0).getNombre()=="juan"
+        when:"quiero buscar un prodcuto"
+        def respuesta=serviciocl.obtenerCliente(nombre)
+
+        then:"se retorna el cliente filtrado"
+        respuesta.getClientes().size()==registros
+
+        where:
+        nombre|registros
+        "Pedro"|1
+
     }
-    */
+
+    def "eliminar pedido"(){
+        given:"Lista de pedidos"
+
+
+        when:"quiero buscar un prodcuto"
+        def respuesta=serviciopd.eliminar(654)
+
+        then:"se retorna el cliente filtrado"
+        respuesta.isEliminado()==true
+
+
+
+    }
+
+
+
 }
