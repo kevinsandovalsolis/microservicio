@@ -23,13 +23,13 @@ public class Controladorpedido {
 
         return serviciopedido.ingresaPedido(request);
     }
-
+*/
     @GetMapping(value = "/eliminarPedido", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseDtopedidos eliminarPedido(@RequestParam Integer numero_pedido) {
+    public Responseeliminarpedido eliminarPedido(@RequestParam Integer numero_pedido) {
 
         return serviciopedido.eliminar(numero_pedido);
     }
- */
+
 
     @PostMapping(value = "/agregarPedido", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDtopedidos agregarPedido(@RequestBody RequestDtopedidos request) {

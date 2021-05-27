@@ -14,17 +14,17 @@ public class Serviciopedido {
     @Autowired
     private bdPedido pedidoBD;
 
-    private List<Pedido> eliminar(List<Pedido> pedidos, Integer numero_pedido) {
-        List<Pedido> pedidosRespuesta= new ArrayList<>(pedidos);//se crea una nueva lista con los datos de la anterior
+    public Responseeliminarpedido eliminar(Integer numero_pedido) {
+        List<Pedido> pedidosRespuesta=new ArrayList<>(pedidoBD.getPedidos());//se crea una nueva lista con los datos de la anterior
         int pedidoeliminar=-1;
-        for(int i=0; i<pedidos.size(); i++) {//for normal
-            if (pedidos.get(i).getNumero_pedido().equals(numero_pedido)) {
+        for(int i=0; i<pedidosRespuesta.size(); i++) {//for normal
+            if (pedidosRespuesta.get(i).getNumero_pedido().equals(numero_pedido)) {
                     pedidoeliminar=i;
             break;
             }
         }
         pedidosRespuesta.remove(pedidoeliminar);
-        return pedidosRespuesta;
+        return Responseeliminarpedido.builder().eliminado(true).build();
     }
 
     public ResponseDtopedidos ingresaPedido(RequestDtopedidos parametros){

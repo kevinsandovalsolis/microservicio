@@ -43,7 +43,7 @@ public class bdProducto {
                         .id_producto(5)
                         .tipo_producto("Juego")
                         .descripcion("Titulo para jugar")
-                        .precio(34222)
+                        .precio(15000)
                         .stock(40)
                         .build(),
                 Producto.builder()

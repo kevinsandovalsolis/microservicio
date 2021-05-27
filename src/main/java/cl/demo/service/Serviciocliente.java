@@ -40,7 +40,7 @@ public class Serviciocliente {
         return  clientesRespuesta;
     }
 
-
+    /*
     private void ejemplos(){
         String cadena1="hola";
         String cadena2="hola";
@@ -58,6 +58,8 @@ public class Serviciocliente {
 
 
     }
+
+     */
 
 
 
