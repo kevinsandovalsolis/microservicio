@@ -17,14 +17,21 @@ public class Serviciopedido {
     public Responseeliminarpedido eliminar(Integer numero_pedido) {
         List<Pedido> pedidosRespuesta=new ArrayList<>(pedidoBD.getPedidos());//se crea una nueva lista con los datos de la anterior
         int pedidoeliminar=-1;
+        boolean respuesta=false;
+
         for(int i=0; i<pedidosRespuesta.size(); i++) {//for normal
+
             if (pedidosRespuesta.get(i).getNumero_pedido().equals(numero_pedido)) {
                     pedidoeliminar=i;
             break;
             }
         }
-        pedidosRespuesta.remove(pedidoeliminar);
-        return Responseeliminarpedido.builder().eliminado(true).build();
+        if(pedidoeliminar != -1){
+            pedidosRespuesta.remove(pedidoeliminar);
+            respuesta=true;
+        }
+
+        return Responseeliminarpedido.builder().eliminado(respuesta).build();
     }
 
     public ResponseDtopedidos ingresaPedido(RequestDtopedidos parametros){

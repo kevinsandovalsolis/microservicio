@@ -101,10 +101,16 @@ class ServicioSpect extends Specification{
 
 
         when:"quiero buscar un prodcuto"
-        def respuesta=serviciopd.eliminar(654)
+        def respuesta=serviciopd.eliminar(id)
 
         then:"se retorna el cliente filtrado"
-        respuesta.isEliminado()==true
+        respuesta.isEliminado()==valorrespuesta
+
+        where:
+        id|valorrespuesta
+        654|true
+        100|false
+
 
 
 
