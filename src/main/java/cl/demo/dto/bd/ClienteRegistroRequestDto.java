@@ -1,16 +1,13 @@
-package cl.demo.dto;
+package cl.demo.dto.bd;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-
-import java.util.List;
-
-@Setter
 @Getter
+@Setter
 @Builder
-public class RequestDtoclientes {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClienteRegistroRequestDto {
 
     private String nombre;
     private String apellido;
@@ -18,6 +15,5 @@ public class RequestDtoclientes {
     private String region;
     private String comuna;
     private String calle;
+
 }
-
-

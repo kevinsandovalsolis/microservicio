@@ -1,54 +1,48 @@
 package cl.demo.cliente;
 
-import cl.demo.dto.Cliente;
+import cl.demo.dto.bd.ClienteRegistroRequestDto;
+import cl.demo.dto.bd.ClienteRegistroResponseDto;
+import cl.demo.dto.bd.ClientesResponseDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Arrays;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 public class bdCliente {
 
 
+    @Autowired
+    private RestTemplate restTemplate;
 
-    public List<Cliente> getClientes(){
-        return Arrays.asList(
-                Cliente.builder()
-                        .telefono(111111111)
-                        .rut("111")
-                        .email("pedro.perez@gmail.com")
-                        .nombre("Pedro")
-                        .edad("30")
-                        .direccion("calle 1")
-                        .apellido("Perez")
-                        .build(),
-                Cliente.builder()
-                        .telefono(222222222)
-                        .rut("222")
-                        .email("mariag@gmail.com")
-                        .nombre("Maria")
-                        .edad("20")
-                        .direccion("calle 2")
-                        .apellido("Gomez")
-                        .build(),
-                Cliente.builder()
-                        .telefono(333333333)
-                        .rut("333")
-                        .email("juan@gmail.com")
-                        .nombre("Juan")
-                        .edad("35")
-                        .direccion("calle 3")
-                        .apellido("Muñoz")
-                        .build(),
-                Cliente.builder()
-                        .telefono(444444444)
-                        .rut("444")
-                        .email("antonioa@gmail.com")
-                        .nombre("Antonio")
-                        .edad("32")
-                        .direccion("calle 4")
-                        .apellido("Aguila")
-                        .build()
-        );
+    private String urlmsBase="http://localhost:8083";
+    private String endpointClienteGet="/obtenerCliente";
+    private String endpointClienteAgregar="/registroCliente";
+
+
+
+    public ClientesResponseDto getClientes(String correo){
+        UriComponentsBuilder url = UriComponentsBuilder.fromHttpUrl(urlmsBase+endpointClienteGet)
+                .queryParam("correo", correo);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
+        HttpEntity formEntity = new HttpEntity<>(headers);
+
+        ResponseEntity<ClientesResponseDto> respuesta= restTemplate.exchange(url.toUriString(), HttpMethod.GET,formEntity,ClientesResponseDto.class);
+
+        return respuesta.getBody();
+
+    }
+
+    public ClienteRegistroResponseDto registroCliente(ClienteRegistroRequestDto request){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
+        HttpEntity formEntity = new HttpEntity<>(request,headers);
+
+        ResponseEntity<ClienteRegistroResponseDto> respuesta= restTemplate.exchange(urlmsBase+endpointClienteAgregar, HttpMethod.POST,formEntity,ClienteRegistroResponseDto.class);
+
+        return respuesta.getBody();
+
     }
 }

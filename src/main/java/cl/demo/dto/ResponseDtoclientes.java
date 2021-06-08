@@ -13,8 +13,7 @@ import java.util.List;
 @Setter
 public class ResponseDtoclientes {
 
-    private List<Cliente> clientes;
-    private String rut;
+    private ClienteResponse clienteResponses;
 
 
 

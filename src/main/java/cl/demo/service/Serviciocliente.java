@@ -2,9 +2,13 @@ package cl.demo.service;
 
 
 import cl.demo.cliente.bdCliente;
-import cl.demo.dto.Cliente;
+import cl.demo.converter.clienteConverter;
+import cl.demo.dto.ClienteResponse;
 import cl.demo.dto.RequestDtoclientes;
 import cl.demo.dto.ResponseDtoclientes;
+import cl.demo.dto.ResponseRegistroClienteDto;
+import cl.demo.dto.bd.ClienteRegistroResponseDto;
+import cl.demo.dto.bd.ClientesResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,22 +21,28 @@ public class Serviciocliente {
     @Autowired
     private bdCliente clienteBD;
 
-    public ResponseDtoclientes ingresaCliente(RequestDtoclientes request){
-        return ResponseDtoclientes.builder()
-            .clientes(request.getClientes())
+    @Autowired
+    private clienteConverter convertClient;
+
+    public ResponseRegistroClienteDto ingresaCliente(RequestDtoclientes request){
+
+        ClienteRegistroResponseDto respuesta=clienteBD.registroCliente(convertClient.getClienteIngesarBD(request));
+        return ResponseRegistroClienteDto.builder()
+            .correo(request.getCorreo())
+            .id(respuesta.getId())
             .build();
     }
 
 
-    public ResponseDtoclientes obtenerCliente(String nombre){
-        List<Cliente> clientes=clienteBD.getClientes();
+    public ResponseDtoclientes obtenerCliente(String correo){
+        ClientesResponseDto clientes=clienteBD.getClientes(correo);
 
-        return ResponseDtoclientes.builder().clientes(filtrar(clientes,nombre)).build();
+        return ResponseDtoclientes.builder().clienteResponses(convertClient.getClienteBD(clientes.getClientes().get(0))).build();
     }
 
-    private List<Cliente> filtrar(List<Cliente> clientes,String nombre){
-        List<Cliente> clientesRespuesta=new ArrayList<>();
-        for(Cliente clt: clientes) {//for normal
+    private List<ClienteResponse> filtrar(List<ClienteResponse> clienteResponses, String nombre){
+        List<ClienteResponse> clientesRespuesta=new ArrayList<>();
+        for(ClienteResponse clt: clienteResponses) {//for normal
             if (clt.getNombre().equalsIgnoreCase(nombre)) {
                 clientesRespuesta.add(clt);
             }

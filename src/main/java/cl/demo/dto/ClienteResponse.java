@@ -8,12 +8,7 @@ import lombok.Builder;
 @Builder
 @Getter
 @Setter
-public class Cliente {
+public class ClienteResponse {
     private String nombre;
-    private String apellido;
-    private String rut;
-    private String edad;
-    private String email;
-    private Integer telefono;
     private String direccion;
 }
