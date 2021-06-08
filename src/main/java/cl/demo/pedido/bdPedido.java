@@ -1,7 +1,6 @@
 package cl.demo.pedido;
 
 import cl.demo.dto.Pedido;
-import cl.demo.dto.Producto;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

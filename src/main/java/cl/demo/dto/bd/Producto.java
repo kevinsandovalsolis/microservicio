@@ -1,15 +1,16 @@
-package cl.demo.dto;
+package cl.demo.dto.bd;
 
-
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Producto {
+
     private Integer id_producto;
     private String tipo_producto;
     private String descripcion;

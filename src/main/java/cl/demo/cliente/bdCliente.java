@@ -3,12 +3,14 @@ package cl.demo.cliente;
 import cl.demo.dto.bd.ClienteRegistroRequestDto;
 import cl.demo.dto.bd.ClienteRegistroResponseDto;
 import cl.demo.dto.bd.ClientesResponseDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+@Slf4j
 @Component
 public class bdCliente {
 
@@ -29,9 +31,15 @@ public class bdCliente {
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         HttpEntity formEntity = new HttpEntity<>(headers);
 
-        ResponseEntity<ClientesResponseDto> respuesta= restTemplate.exchange(url.toUriString(), HttpMethod.GET,formEntity,ClientesResponseDto.class);
 
-        return respuesta.getBody();
+        try{
+            ResponseEntity<ClientesResponseDto> respuesta= restTemplate.exchange(url.toUriString(), HttpMethod.GET,formEntity,ClientesResponseDto.class);
+            return respuesta.getBody();
+        }catch(Exception e){
+            log.error("no se pudo conectar con microservicioBD " + e.getMessage());
+            throw e;
+        }
+
 
     }
 

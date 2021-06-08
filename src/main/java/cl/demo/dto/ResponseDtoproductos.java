@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 public class ResponseDtoproductos {
 
-    private List<Producto> productos;
+    private ProductoResponse productoResponses;
+    //private List<Producto> productos;
 
 }

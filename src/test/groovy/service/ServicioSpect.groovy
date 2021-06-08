@@ -1,12 +1,8 @@
 import cl.demo.cliente.bdCliente
-import cl.demo.dto.Cliente
 import cl.demo.dto.Pedido
-import cl.demo.dto.Producto
+
 import cl.demo.dto.RequestDtoclientes
 import cl.demo.dto.RequestDtopedidos
-import cl.demo.dto.RequestDtoproductos
-import cl.demo.dto.ResponseDtoclientes
-import cl.demo.dto.ResponseDtopedidos
 import cl.demo.pedido.bdPedido
 import cl.demo.producto.bdProducto
 import cl.demo.service.Serviciocliente

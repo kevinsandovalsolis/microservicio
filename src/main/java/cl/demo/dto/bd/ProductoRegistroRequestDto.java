@@ -1,20 +1,17 @@
-package cl.demo.dto;
+package cl.demo.dto.bd;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
-
-@Setter
 @Getter
+@Setter
 @Builder
-public class RequestDtoproductos {
+public class ProductoRegistroRequestDto {
 
     private String tipo_producto;
     private String descripcion;
     private Integer precio;
     private Integer stock;
+
 }

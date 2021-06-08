@@ -5,10 +5,9 @@ import cl.demo.controller.Controladorpedido
 import cl.demo.controller.Controladorproducto
 import cl.demo.dto.Cliente
 import cl.demo.dto.Pedido
-import cl.demo.dto.Producto
+
 import cl.demo.dto.RequestDtoclientes
 import cl.demo.dto.RequestDtopedidos
-import cl.demo.dto.RequestDtoproductos
 import cl.demo.dto.ResponseDtoclientes
 import cl.demo.dto.ResponseDtopedidos
 import cl.demo.dto.ResponseDtoproductos

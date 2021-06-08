@@ -26,7 +26,7 @@ public class Serviciocliente {
 
     public ResponseRegistroClienteDto ingresaCliente(RequestDtoclientes request){
 
-        ClienteRegistroResponseDto respuesta=clienteBD.registroCliente(convertClient.getClienteIngesarBD(request));
+        ClienteRegistroResponseDto respuesta=clienteBD.registroCliente(convertClient.getClienteIngresarBD(request));
         return ResponseRegistroClienteDto.builder()
             .correo(request.getCorreo())
             .id(respuesta.getId())
@@ -41,8 +41,8 @@ public class Serviciocliente {
     }
 
     private List<ClienteResponse> filtrar(List<ClienteResponse> clienteResponses, String nombre){
-        List<ClienteResponse> clientesRespuesta=new ArrayList<>();
-        for(ClienteResponse clt: clienteResponses) {//for normal
+        List<ClienteResponse> clientesRespuesta=new ArrayList<>();//lista de clientes filtrados para la respuesta
+        for(ClienteResponse clt: clienteResponses) {
             if (clt.getNombre().equalsIgnoreCase(nombre)) {
                 clientesRespuesta.add(clt);
             }

@@ -13,12 +13,14 @@ public class clienteConverter {
     public ClienteResponse getClienteBD(Cliente cliente){
         return ClienteResponse.builder()
                 .nombre(cliente.getNombre()+" "+cliente.getApellido())
+                //junta nombre y apellido para mostrar un nombre completo
                 .direccion(cliente.getRegion()+"-"+cliente.getComuna()+"-"+cliente.getCalle())
+                //junta region, comuna y calle para mostrar una direccion completa
                 .build();
 
     }
 
-    public ClienteRegistroRequestDto getClienteIngesarBD(RequestDtoclientes cliente){
+    public ClienteRegistroRequestDto getClienteIngresarBD(RequestDtoclientes cliente){
         return ClienteRegistroRequestDto.builder()
                 .nombre(cliente.getNombre())
                 .apellido(cliente.getApellido())

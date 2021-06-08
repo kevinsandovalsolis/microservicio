@@ -1,8 +1,11 @@
 package cl.demo.service;
 
+
+import cl.demo.converter.productoConverter;
+import cl.demo.dto.ProductoResponse;
+import cl.demo.dto.bd.ClientesResponseDto;
+import cl.demo.dto.bd.ProductosResponseDto;
 import cl.demo.producto.bdProducto;
-import cl.demo.dto.Producto;
-import cl.demo.dto.RequestDtoproductos;
 import cl.demo.dto.ResponseDtoproductos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,29 +19,22 @@ public class Servicioproducto {
     @Autowired
     private bdProducto productoBD;
 
-
-
-    /*
-    public ResponseDtoproductos ingresaProducto(RequestDtoproductos request){
-        return ResponseDtoproductos.builder()
-                .productos(request.getProductos())
-                .build();
-    }
-    */
+    @Autowired
+    private productoConverter convertProduct;
 
 
 
     public ResponseDtoproductos obtenerProducto(String tipo_producto,Integer preciomin,Integer preciomax){
-        List<Producto> productos=productoBD.getProductos();
+        ProductosResponseDto productos=productoBD.getProductos(tipo_producto,preciomin,preciomax);
 
-        return ResponseDtoproductos.builder().productos(filtrar(productos,tipo_producto,preciomin,preciomax)).build();
+        return ResponseDtoproductos.builder().productoResponses(convertProduct.getProductoBD(productos.getProductos().get(0))).build();
     }
 
-    private List<Producto> filtrar(List<Producto> productos,String tipo_producto,Integer preciomin,Integer preciomax){
-        List<Producto> productosRespuesta=new ArrayList<>();//lista productos filtrados
-        for(Producto tpp: productos) {//for normal
-            if (tpp.getTipo_producto().equalsIgnoreCase(tipo_producto)) {
-                    if( ((tpp.getPrecio()) >= preciomin) && ((tpp.getPrecio()) <= preciomax) ){
+    private List<ProductoResponse> filtrar(List<ProductoResponse> productoResponses, String tipo_producto, Integer preciomin, Integer preciomax){
+        List<ProductoResponse> productosRespuesta=new ArrayList<>();//lista productos filtrados
+        for(ProductoResponse tpp: productoResponses) {//for normal
+            if (tpp.getTipo().equalsIgnoreCase(tipo_producto)) {
+                    if( ((tpp.getCosto()) >= preciomin) && ((tpp.getCosto()) <= preciomax) ){
                         productosRespuesta.add(tpp);
                     }
 
