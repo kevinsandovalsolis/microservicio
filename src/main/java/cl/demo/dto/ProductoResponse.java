@@ -8,6 +8,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductoResponse {
-    private String tipo;
-    private Integer costo;
+
+    private Integer id_producto;
+    private String tipo_producto;
+    private String descripcion;
+    private Integer precio;
+
 }

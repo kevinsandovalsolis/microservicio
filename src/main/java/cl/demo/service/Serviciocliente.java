@@ -27,6 +27,9 @@ public class Serviciocliente {
     public ResponseRegistroClienteDto ingresaCliente(RequestDtoclientes request){
 
         ClienteRegistroResponseDto respuesta=clienteBD.registroCliente(convertClient.getClienteIngresarBD(request));
+
+
+
         return ResponseRegistroClienteDto.builder()
             .correo(request.getCorreo())
             .id(respuesta.getId())
